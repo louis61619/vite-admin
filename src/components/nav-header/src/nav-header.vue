@@ -15,30 +15,30 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import Breadcrumb from '@vonor/ui/breadcrumb'
-import UserInfo from './user-info.vue'
+import { defineComponent } from "vue";
+import Breadcrumb from "@/base-ui/breadcrumb";
+import UserInfo from "./user-info.vue";
 
 export default defineComponent({
   components: {
     UserInfo,
-    Breadcrumb
+    Breadcrumb,
   },
   props: {
     collapse: Boolean,
-    breadcrumbs: Array
+    breadcrumbs: Array,
   },
-  emits: ['foldChange'],
+  emits: ["foldChange"],
   setup(props, { emit }) {
     const handleFoldClick = () => {
-      emit('foldChange', !props.collapse)
-    }
+      emit("foldChange", !props.collapse);
+    };
 
     return {
-      handleFoldClick
-    }
-  }
-})
+      handleFoldClick,
+    };
+  },
+});
 </script>
 
 <style scoped lang="less">
