@@ -1,0 +1,16 @@
+node_modules
+.DS_Store
+/dist
+dist-ssr
+lib
+es
+*.local
+.idea
+.temp
+.cache
+.vscode
+docs/.vuepress/dist
+
+
+lerna-debug.log
+yarn-error.log
