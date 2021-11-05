@@ -5,94 +5,94 @@
 </template>
 
 <script setup lang="ts">
-import { computed, defineProps, withDefaults } from "vue";
-import * as echarts from "echarts";
-import BaseChart from "@/base-ui/chart";
+import { computed, defineProps, withDefaults } from 'vue'
+import * as echarts from 'echarts'
+import BaseChart from '@/base-ui/chart'
 
 const props = withDefaults(
   defineProps<{
-    title?: string;
-    xLabels: string[];
-    yValues: any[];
+    title?: string
+    xLabels: string[]
+    yValues: any[]
   }>(),
   {
-    title: "",
+    title: ''
   }
-);
+)
 
 const options = computed<echarts.EChartsOption>(() => {
   return {
     title: {
-      text: "支持滑鼠滾動縮放",
+      text: '支持滑鼠滾動縮放'
       // subtext: 'Feature Sample: Gradient Color, Shadow, Click Zoom'
     },
     xAxis: {
       data: props.xLabels,
       axisLabel: {
         inside: true,
-        color: "#fff",
+        color: '#fff'
         // textStyle: {
         //   color: '#fff'
         // }
       },
       axisTick: {
-        show: false,
+        show: false
       },
       axisLine: {
-        show: false,
+        show: false
       },
-      z: 10,
+      z: 10
     },
     yAxis: {
       axisLine: {
-        show: false,
+        show: false
       },
       axisTick: {
-        show: false,
+        show: false
       },
       axisLabel: {
-        color: "#999",
+        color: '#999'
         // textStyle: {
         //   color: '#999'
         // }
-      },
+      }
     },
     grid: {
-      left: "3%",
-      right: "4%",
-      bottom: "7%",
-      containLabel: true,
+      left: '3%',
+      right: '4%',
+      bottom: '7%',
+      containLabel: true
     },
     dataZoom: [
       {
-        type: "inside",
-      },
+        type: 'inside'
+      }
     ],
     series: [
       {
-        type: "bar",
+        type: 'bar',
         showBackground: true,
         itemStyle: {
           color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-            { offset: 0, color: "#83bff6" },
-            { offset: 0.5, color: "#188df0" },
-            { offset: 1, color: "#188df0" },
-          ]),
+            { offset: 0, color: '#83bff6' },
+            { offset: 0.5, color: '#188df0' },
+            { offset: 1, color: '#188df0' }
+          ])
         },
         emphasis: {
           itemStyle: {
             color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
-              { offset: 0, color: "#2378f7" },
-              { offset: 0.7, color: "#2378f7" },
-              { offset: 1, color: "#83bff6" },
-            ]),
-          },
+              { offset: 0, color: '#2378f7' },
+              { offset: 0.7, color: '#2378f7' },
+              { offset: 1, color: '#83bff6' }
+            ])
+          }
         },
-        data: props.yValues,
-      },
-    ],
-  };
-});
+        data: props.yValues
+      }
+    ]
+  }
+})
 </script>
 
 <style scoped></style>

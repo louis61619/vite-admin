@@ -5,14 +5,14 @@
 </template>
 
 <script setup lang="ts">
-import { computed, defineProps } from "vue";
-import { EChartsOption } from "echarts";
-import BaseChart from "@/base-ui/chart";
-import { IDataType } from "../types/type";
+import { computed, defineProps } from 'vue'
+import { EChartsOption } from 'echarts'
+import BaseChart from '@/base-ui/chart'
+import { IDataType } from '../types/type'
 
 const props = defineProps<{
-  roseData: IDataType[];
-}>();
+  roseData: IDataType[]
+}>()
 
 const options = computed<EChartsOption>(() => {
   return {
@@ -26,37 +26,37 @@ const options = computed<EChartsOption>(() => {
         dataView: {
           show: true,
           readOnly: false,
-          title: "data view",
-          lang: ["data view", "close", "reset"],
+          title: 'data view',
+          lang: ['data view', 'close', 'reset']
         },
-        restore: { show: true, title: "reset" },
-        saveAsImage: { show: true, title: "save" },
-      },
+        restore: { show: true, title: 'reset' },
+        saveAsImage: { show: true, title: 'save' }
+      }
     },
     // 顯示提示框
     tooltip: {
-      trigger: "item",
+      trigger: 'item'
     },
     legend: {
-      left: "center",
-      top: "bottom",
-      data: [],
+      left: 'center',
+      top: 'bottom',
+      data: []
     },
     series: [
       {
-        name: "商品數量",
-        type: "pie",
+        name: '商品數量',
+        type: 'pie',
         radius: [5, 90],
-        center: ["50%", "50%"],
-        roseType: "area",
+        center: ['50%', '50%'],
+        roseType: 'area',
         itemStyle: {
-          borderRadius: 8,
+          borderRadius: 8
         },
-        data: props.roseData,
-      },
-    ],
-  };
-});
+        data: props.roseData
+      }
+    ]
+  }
+})
 </script>
 
 <style scoped></style>

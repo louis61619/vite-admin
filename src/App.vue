@@ -7,27 +7,27 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue'
 // 局部引入
 // import { ElButton } from 'element-plus'
 // 局部引入css
 // import 'element-plus/lib/theme-chalk/el-button.css'
 
-import { ElConfigProvider } from "element-plus";
+import { ElConfigProvider } from 'element-plus'
 
-import zhTW from "element-plus/lib/locale/lang/zh-tw";
+import zhTW from 'element-plus/lib/locale/lang/zh-tw'
 
 export default defineComponent({
-  name: "App",
+  name: 'App',
   components: {
-    ElConfigProvider,
+    ElConfigProvider
   },
   data() {
     return {
-      locale: zhTW,
-    };
-  },
-});
+      locale: zhTW
+    }
+  }
+})
 </script>
 
 <style lang="less">

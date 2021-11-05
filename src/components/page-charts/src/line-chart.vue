@@ -5,74 +5,74 @@
 </template>
 
 <script setup lang="ts">
-import { computed, defineProps, withDefaults } from "vue";
-import { EChartsOption } from "echarts";
-import BaseChart from "@/base-ui/chart";
+import { computed, defineProps, withDefaults } from 'vue'
+import { EChartsOption } from 'echarts'
+import BaseChart from '@/base-ui/chart'
 
 const props = withDefaults(
   defineProps<{
-    title?: string;
-    xLabels: string[];
-    yValues: any[];
+    title?: string
+    xLabels: string[]
+    yValues: any[]
   }>(),
   {
-    title: "",
+    title: ''
   }
-);
+)
 
 const options = computed<EChartsOption>(() => {
   return {
     title: {
-      text: props.title,
+      text: props.title
     },
     tooltip: {
-      trigger: "axis",
+      trigger: 'axis',
       axisPointer: {
-        type: "cross",
+        type: 'cross',
         label: {
-          backgroundColor: "#6a7985",
-        },
-      },
+          backgroundColor: '#6a7985'
+        }
+      }
     },
     toolbox: {
       feature: {
-        saveAsImage: { show: true, title: "save" },
-      },
+        saveAsImage: { show: true, title: 'save' }
+      }
     },
     legend: {},
     // 上下左右間距
     grid: {
-      left: "3%",
-      right: "4%",
-      bottom: "3%",
-      containLabel: true,
+      left: '3%',
+      right: '4%',
+      bottom: '3%',
+      containLabel: true
     },
     xAxis: [
       {
-        type: "category",
+        type: 'category',
         boundaryGap: false,
-        data: props.xLabels,
-      },
+        data: props.xLabels
+      }
     ],
     yAxis: [
       {
-        type: "value",
-      },
+        type: 'value'
+      }
     ],
     series: [
       {
-        name: "分類銷量",
-        type: "line",
-        stack: "總量",
+        name: '分類銷量',
+        type: 'line',
+        stack: '總量',
         areaStyle: {},
         emphasis: {
-          focus: "series",
+          focus: 'series'
         },
-        data: props.yValues,
-      },
-    ],
-  };
-});
+        data: props.yValues
+      }
+    ]
+  }
+})
 </script>
 
 <style scoped></style>

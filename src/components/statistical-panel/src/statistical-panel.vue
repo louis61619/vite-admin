@@ -9,9 +9,7 @@
     <div class="content">
       <BaseCounterUp
         :number="panelData.number1"
-        :option="
-          panelData.amount === 'saleroom' ? counterOption2 : counterOption1
-        "
+        :option="panelData.amount === 'saleroom' ? counterOption2 : counterOption1"
       />
     </div>
     <div class="footer">
@@ -19,9 +17,7 @@
         {{ panelData.subtitle }}
         <BaseCounterUp
           :number="panelData.number2"
-          :option="
-            panelData.amount === 'saleroom' ? counterOption2 : counterOption1
-          "
+          :option="panelData.amount === 'saleroom' ? counterOption2 : counterOption1"
         />
       </span>
     </div>
@@ -29,37 +25,37 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
-import BaseCounterUp from "@/base-ui/count-up";
+import { defineComponent } from 'vue'
+import BaseCounterUp from '@/base-ui/count-up'
 
 export default defineComponent({
   components: {
-    BaseCounterUp,
+    BaseCounterUp
   },
   props: {
     panelData: {
       type: Object,
       default: function () {
-        return {};
-      },
-    },
+        return {}
+      }
+    }
   },
 
   setup() {
     const counterOption1 = {
       decimalPlaces: 0,
-      prefix: "", // 单位
-    };
+      prefix: '' // 单位
+    }
     const counterOption2 = {
       decimalPlaces: 0,
-      prefix: "$",
-    };
+      prefix: '$'
+    }
     return {
       counterOption1,
-      counterOption2,
-    };
-  },
-});
+      counterOption2
+    }
+  }
+})
 </script>
 
 <style scoped lang="less">
