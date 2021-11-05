@@ -5,40 +5,41 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, computed } from 'vue'
-import BaseChart from '@/base-ui/chart'
-import { IDataType } from '../types/type'
+import { defineProps, computed } from "vue";
+import BaseChart from "@/base-ui/chart";
+import { IDataType } from "../types/type";
+import { EChartsOption } from "echarts";
 
 const props = defineProps<{
-  pieData: IDataType
-}>()
+  pieData: IDataType[];
+}>();
 
-const option = computed(() => {
+const option = computed<EChartsOption>(() => {
   return {
     tooltip: {
-      trigger: 'item'
+      trigger: "item",
     },
     legend: {
-      orient: 'horizontal',
-      left: 'left'
+      orient: "horizontal",
+      left: "left",
     },
     series: [
       {
-        name: '商品數量',
-        type: 'pie',
-        radius: '50%',
+        name: "商品數量",
+        type: "pie",
+        radius: "50%",
         data: props.pieData,
         emphasis: {
           itemStyle: {
             shadowBlur: 10,
             shadowOffsetX: 0,
-            shadowColor: 'rgba(0, 0, 0, 0.5)'
-          }
-        }
-      }
-    ]
-  }
-})
+            shadowColor: "rgba(0, 0, 0, 0.5)",
+          },
+        },
+      },
+    ],
+  };
+});
 </script>
 
 <style scoped></style>
