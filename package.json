@@ -7,6 +7,7 @@
     "serve": "vite preview",
     "prettier": "prettier --write .",
     "prepare": "husky install",
+    "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx --max-warnings 0",
     "commit": "cz"
   },
   "dependencies": {

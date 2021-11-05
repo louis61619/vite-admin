@@ -8,3 +8,5 @@ declare module '*.vue' {
 }
 
 declare module 'mockjs'
+
+declare let $filter: any
